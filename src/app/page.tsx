@@ -1,5 +1,6 @@
 "use client";
 
+import { index } from "drizzle-orm/pg-core";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -9,11 +10,18 @@ export default function Home() {
   useEffect(() => {
     console.log("fetching advocates...");
     fetch("/api/advocates").then((response) => {
-      response.json().then((jsonResponse) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      }).then((jsonResponse) => {
         setAdvocates(jsonResponse.data);
         setFilteredAdvocates(jsonResponse.data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch advocates:", error);
+        // TODO: Add user-facing error state
       });
-    });
   }, []);
 
   const onChange = (e) => {
@@ -58,6 +66,7 @@ export default function Home() {
       <br />
       <table>
         <thead>
+          <tr>
           <th>First Name</th>
           <th>Last Name</th>
           <th>City</th>
@@ -65,18 +74,19 @@ export default function Home() {
           <th>Specialties</th>
           <th>Years of Experience</th>
           <th>Phone Number</th>
+          </tr>
         </thead>
         <tbody>
-          {filteredAdvocates.map((advocate) => {
+          {filteredAdvocates.map((advocate, index) => {
             return (
-              <tr>
+              <tr key={`advocateList_${advocate?.id}-${index}`}>
                 <td>{advocate.firstName}</td>
                 <td>{advocate.lastName}</td>
                 <td>{advocate.city}</td>
                 <td>{advocate.degree}</td>
                 <td>
-                  {advocate.specialties.map((s) => (
-                    <div>{s}</div>
+                  {advocate.specialties.map((s, specialtyIndex) => (
+                    <div key={`advocateSpecialty_${advocate?.id}=${specialtyIndex}`}>{s}</div>
                   ))}
                 </td>
                 <td>{advocate.yearsOfExperience}</td>
