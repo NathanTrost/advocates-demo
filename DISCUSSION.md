@@ -29,8 +29,24 @@
 
 ### Package Updates and Vulnerabilities[https://github.com/NathanTrost/advocates-demo/pull/10/files]
 
-**Bug Fixes:**
+**Maintenance:**
 
 - Bumped Next.js to a patch version to fix major vulnerability in build. Chose to do this after the TS fix as I was unsure if it might cause breaking changes.
 - Ran 'npm audit fix' to elegantly autofix esbuild. The remaining 4 vulnerabilities are moderate and fixing might require more time and research
 - Verified that none of these updates appear to negatively affect the apps operation.
+
+### Style and FE work[https://github.com/NathanTrost/advocates-demo/pull/11/files]
+
+**Enhancements:**
+
+- Extracted table into reusable `ExpandableTable` component for better code organization
+- Added styling to the application using Tailwind CSS v3, adapting patterns from a personal project
+- Added accordion styling to rows for better UI experience. (initially shows 2 "Specialties", click "...More" or the arrow to expand).
+- Consolidated first and last names in table to "Name" to minimize space.
+- Moved 'Search' title to the input placeholder instead (cleaner UI, less redundancy)
+- Added `classnames` package and using it within page.tsx and the new ExpandableTable component. I find this package useful especially for dynamic classnames, but like to use it anytime multiple classnames need to be used, this opinion comes from fighting snapshot tests but also disliking the ole 'undefined' class in html markup.
+- Utilizing custom `formatPhoneNumber` util in table
+
+**Bug Fix:**
+
+- Added `prettier` & `prettier-plugin-tailwindcss` packages. I had missed installing prettier in the initial PR. As this was a much larger PR it made the lack of auto-formatting more obvious.
