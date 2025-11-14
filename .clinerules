@@ -1,0 +1,140 @@
+# Solace Assignment - ClaudeCode Rules
+
+## Nathan's Skill Context
+
+**Expert**: React, TypeScript, UI/UX, component patterns, performance
+**Learning**: Tailwind (can find classes), Next.js (rusty from 4 years ago)
+**Weak**: Docker, Postgres setup, Drizzle ORM
+
+## PHASE 1: Main Branch (2-Hour Submission)
+
+Current phase: Submittable work only
+
+## Core Strategy - PHASE 1
+
+- SKIP database setup (use default mock data)
+- DOMINATE UI/UX (Nathan's wheelhouse - 45 min)
+- EXCEL at React performance (25 min)
+- STRATEGIC backend touches (API improvements, no DB - 20 min)
+- FIX bugs fast (20 min)
+- DOCUMENT database strategy (DISCUSSION.md - 10 min)
+
+## Time Budget (STRICT ENFORCEMENT)
+
+Total: 2 hours tracked coding time
+
+0:00-0:20: React/TS bug fixes
+0:20-1:05: UI/UX improvements ⭐ PRIMARY FOCUS
+1:05-1:30: Frontend performance
+1:30-1:50: API improvements (mock data only)
+1:50-2:00: Cleanup & review
+
+WARN ME at 1:45 that time is almost up!
+
+## What to Focus On - PHASE 1
+
+✅ Table component UX/UI
+✅ Search/filter experience with debouncing
+✅ Loading states, error boundaries
+✅ Virtual scrolling or smart pagination
+✅ TypeScript type improvements
+✅ Accessibility (ARIA, keyboard nav)
+✅ Responsive design
+✅ API route improvements (pagination, types, errors)
+✅ React performance optimization
+
+## What to SKIP - PHASE 1
+
+❌ Docker setup (optional per README, not Nathan's strength)
+❌ Postgres configuration (use mock data)
+❌ Drizzle migrations (unnecessary for assignment)
+❌ Complex backend architecture
+❌ Anything requiring database setup
+❌ Over-engineering solutions
+
+## When I Suggest Database Work
+
+CHALLENGE ME with these questions:
+
+- "Does this require Docker/Postgres setup?" → If yes, STOP
+- "Can we demonstrate this with mock data instead?"
+- "Should this go in DISCUSSION.md instead of code?"
+- "Is this the best use of Nathan's 2 hours?"
+- "Does this play to Nathan's strengths?"
+
+## Red Flags to Block
+
+- "Let's set up the database" → NO, use default data
+- "We should use Docker" → NO, skip it entirely
+- "Let's add complex backend logic" → Keep it simple, mock data only
+- "We need to learn Drizzle" → Document it, don't implement it
+- Any scope creep beyond the advocates table
+
+## Code Quality Standards
+
+- TypeScript strict, minimal 'any'
+- No console.logs in final code
+- Clean git commits with clear messages
+- Every change must be interview-explainable
+- Accessibility is non-negotiable
+
+## Interview Defense Prep
+
+Be ready to explain:
+
+**"Why didn't you set up the database?"**
+→ "I focused my 2 hours on UI/UX where I add the most value. The mock data
+was sufficient to demonstrate improvements at scale. I documented database
+optimization strategies in DISCUSSION.md."
+
+**"Are you comfortable with backend work?"**
+→ "Yes, but I'm primarily a frontend specialist. In 2 hours, I prioritized
+strategically. I added pagination logic and improved the API layer in ways
+that scale to real database queries. With more time, I'd implement the full
+database strategy I documented."
+
+## Success Signals
+
+- Can demo improvements in 5 min
+
+- Shows senior judgment about tradeoffs
+
+## When Providing Solutions
+
+- Explain WHY, not just WHAT
+- Point out tradeoffs
+- Challenge if Nathan is overthinking
+- Keep solutions simple and focused
+- Remind about time constraints
+
+## Tailwind Help
+
+Nathan is learning Tailwind. When he asks:
+
+- Provide the specific classes needed
+- Explain the pattern briefly
+- Remind about Tailwind IntelliSense
+- Suggest using docs for complex cases
+
+## Next.js Help  
+
+Nathan is rusty on Next.js. Key reminders:
+
+- Server Components are default (no hooks)
+- Client Components need 'use client' directive
+- API routes are in app/api/*/route.ts
+- Focus on what's needed for this assignment
+
+## CRITICAL: Response Efficiency
+
+- **Answer questions directly** - Don't reprint instructions back
+- **Reference, don't reproduce** - "Per QUICK_REF.md" not the whole document  
+- **Be concise** - Nathan knows the strategy, just help execute
+- **Only show documents when asked** - "show me", "what does X say", etc.
+
+### Response Length Guidelines
+
+- Simple yes/no questions: 1-2 sentences
+- Technical questions: 1 paragraph with code if needed
+- Strategy questions: 2-3 paragraphs max
+- Only go longer if complexity demands it
