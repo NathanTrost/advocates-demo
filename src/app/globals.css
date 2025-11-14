@@ -1,3 +1,232 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-button-primary: #4b72c6;
+  --color-button-primary-hover: #5a82d9;
+  --color-button-primary-text: #ffffff;
+  --color-icon: #294c83;
+  --color-icon-hover: #4b72c6;
+  --color-heading-1: #111827;
+  --color-heading-2: #1f2937;
+  --color-heading-3: #374151;
+  --color-bg-body: #f9fafb;
+  --color-bg-secondary: #f3f4f6;
+  --color-bg-table-header: #dbeafe;
+  --color-text-on-dark: #f9fafb;
+  --color-text-table-header: #1f2937;
+  --color-link: #2563eb;
+  --color-border-input: #9ca3af;
+  --color-border-input-hover: #6b7280;
+  --color-border-table-row: #d1d5db;
+  --color-border-table-cell: #f3f4f6;
+}
+
+@layer utilities {
+  .btn-primary {
+    background-color: var(--color-button-primary);
+    color: var(--color-button-primary-text);
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-button-primary-hover);
+  }
+
+  .text-heading-1 {
+    color: var(--color-heading-1);
+  }
+
+  .flex-container,
+  .flex-col,
+  .flex-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  /* Text Input Styles */
+  .input-text {
+    border: 1px solid var(--color-border-input);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+    color: var(--color-heading-1);
+  }
+
+  .input-text:focus {
+    outline: none;
+    border-color: var(--color-button-primary);
+    box-shadow: 0 0 0 2px rgba(75, 114, 198, 0.2);
+  }
+
+  .input-text:hover {
+    border-color: var(--color-border-input-hover);
+  }
+
+  /* Table Styles */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .table thead {
+    background-color: var(--color-bg-table-header);
+  }
+
+  .table thead th {
+    color: var(--color-text-table-header);
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+
+  .table tbody tr {
+    border-bottom: 1px solid var(--color-border-table-row);
+    background-color: #ffffff;
+    transition: background-color 0.15s ease;
+  }
+
+  .table tbody tr:hover {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .table tbody td {
+    padding: 1rem;
+    color: var(--color-heading-3);
+    border-right: 1px inset var(--color-border-table-cell);
+    vertical-align: top;
+  }
+
+  .table tbody td:first-child {
+    font-weight: 500;
+    color: var(--color-heading-2);
+  }
+
+  .table tbody td:last-child {
+    border-right: none;
+  }
+
+  .table thead th.specialtiesColumn {
+    min-width: max(500px, 50%);
+  }
+
+  .toggle-row {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .toggle-row-link {
+    color: var(--color-button-primary);
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0;
+    font-size: 0.875rem;
+    padding: 0.25rem 0;
+    margin-top: 0.25rem;
+    transition: all 0.2s ease;
+  }
+  .toggle-row-link:hover {
+    text-decoration: underline;
+    color: var(--color-button-primary-hover);
+  }
+
+  .toggle-row-arrow {
+    color: var(--color-icon);
+    font-size: 1.25rem;
+    line-height: 1;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+    transform: rotate(-90deg);
+  }
+  .toggle-row-arrow.expanded {
+    transform: rotate(0deg);
+  }
+  .toggle-row-arrow:hover {
+    color: var(--color-button-primary-hover);
+  }
+  /* Accordion Table Styles */
+  .table-accordion tbody tr {
+    cursor: pointer;
+  }
+
+  .table-accordion tbody tr.expandable:hover {
+    background-color: var(--color-bg-body);
+  }
+
+  .table-accordion tbody tr.expanded {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .table-accordion tbody tr td.expandable-cell {
+    padding-right: 4rem;
+  }
+}
+
+@layer base {
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-heading-3);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: var(--color-heading-1);
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--color-heading-2);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  color: var(--color-heading-3);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.625;
+  color: var(--color-heading-3);
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+}

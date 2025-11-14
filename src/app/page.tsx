@@ -1,7 +1,9 @@
 "use client";
 
 import { ChangeEvent, useEffect, useState } from "react";
-import type { Advocate, AdvocatesApiResponse } from "@/types/advocate";
+import type { Advocate } from "@/types/advocate";
+import ExpandableTable from "./components/ExpandableTable";
+
 
 export default function Home() {
   const [advocates, setAdvocates] = useState<Advocate[]>([]);
@@ -56,57 +58,28 @@ export default function Home() {
     setFilteredAdvocates(advocates);
   };
 
+  
+
   return (
-    <main style={{ margin: "24px" }}>
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
-      <div>
-        <p>Search</p>
+    <main className="flex-container m-6" >
+      <div className="flex-col w-full">
+      <h1 className="text-heading-1">Solace Advocates</h1>
+     
+      <div className="flex-row">
+        <div className="flex-col">        
         <p>
           Searching for: <span id="search-term"></span>
         </p>
-        <input style={{ border: "1px solid black" }} onChange={onChange} />
-        <button onClick={onClick}>Reset Search</button>
+        <div className="flex-row">
+        <input className="input-text" placeholder="Search" onChange={onChange} />
+        <button className="btn-primary" onClick={onClick}>Reset Search</button>
+        </div>
+        </div>
       </div>
-      <br />
-      <br />
-      <table>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>City</th>
-            <th>Degree</th>
-            <th>Specialties</th>
-            <th>Years of Experience</th>
-            <th>Phone Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredAdvocates.map((advocate, index) => {
-            return (
-              <tr key={`advocateList_${advocate?.id}-${index}`}>
-                <td>{advocate.firstName}</td>
-                <td>{advocate.lastName}</td>
-                <td>{advocate.city}</td>
-                <td>{advocate.degree}</td>
-                <td>
-                  {advocate.specialties.map((s, specialtyIndex) => (
-                    <div
-                      key={`advocateSpecialty_${advocate?.id}-${specialtyIndex}`}
-                    >
-                      {s}
-                    </div>
-                  ))}
-                </td>
-                <td>{advocate.yearsOfExperience}</td>
-                <td>{advocate.phoneNumber}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+     
+      <ExpandableTable advocates={filteredAdvocates} />
+      
+      </div>
     </main>
   );
 }
