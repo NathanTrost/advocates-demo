@@ -5,9 +5,6 @@
 .claudecode/
 Claude.md
 
-# Holding launch file back for now
-.vscode/launch.json
-
 # dependencies
 /node_modules
 /.pnp
