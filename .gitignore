@@ -2,12 +2,11 @@
 
 # Claude related files
 .clinerules
-.clinerules-project
-claude_tasks.md
-Claude.md
 .claudecode/
-*.claude.md
-LEARNING_NOTES.md
+Claude.md
+
+# Holding launch file back for now
+.vscode/launch.json
 
 # dependencies
 /node_modules
