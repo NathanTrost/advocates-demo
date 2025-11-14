@@ -1,0 +1,29 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  
+  // Tailwind CSS support
+  "css.validate": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  
+  // Prettier config
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+
+  "cSpell.words": [
+    "drizzle",
+    "solace",
+    "solaceassignment",
+    "vercel"
+  ]
+}
