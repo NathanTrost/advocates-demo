@@ -2,7 +2,18 @@
 
 ## WORK DONE HERE
 
-### feature/initial-dev-setup[https://github.com/NathanTrost/advocates-demo/pull/7/files]
+### Initial Dev Setup[https://github.com/NathanTrost/advocates-demo/pull/7/files]
+
+**Enhancement:**
 
 - Added basic VSCode setup and prettierconfig to ain autoformatting and other tooling
+
 - Ignoring claude files
+
+### Hydration and Key Fixes[https://github.com/NathanTrost/advocates-demo/pull/8/files]
+
+**Bug Fixes:**
+
+- Added unique keys to mapped lists (advocates & specialties) to eliminate hydration errors
+- Fixed unhandled promise rejection on fetch with proper error handling
+- Added missing `<tr>` wrapper in table header (invalid HTML)
