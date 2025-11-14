@@ -29,7 +29,7 @@
 
 ### Package Updates and Vulnerabilities[https://github.com/NathanTrost/advocates-demo/pull/10/files]
 
-**Bug Fixes:**
+**Maintenance:**
 
 - Bumped Next.js to a patch version to fix major vulnerability in build. Chose to do this after the TS fix as I was unsure if it might cause breaking changes.
 - Ran 'npm audit fix' to elegantly autofix esbuild. The remaining 4 vulnerabilities are moderate and fixing might require more time and research
