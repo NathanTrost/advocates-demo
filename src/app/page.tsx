@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import type { Advocate, AdvocatesApiResponse } from "@/types/advocate";
 
 export default function Home() {
-  const [advocates, setAdvocates] = useState([]);
-  const [filteredAdvocates, setFilteredAdvocates] = useState([]);
+  const [advocates, setAdvocates] = useState<Advocate[]>([]);
+  const [filteredAdvocates, setFilteredAdvocates] = useState<Advocate[]>([]);
 
   useEffect(() => {
     console.log("fetching advocates...");
@@ -16,20 +17,25 @@ export default function Home() {
     });
   }, []);
 
-  const onChange = (e) => {
-    const searchTerm = e.target.value;
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const searchTerm = e.target.value.toLowerCase();
 
-    document.getElementById("search-term").innerHTML = searchTerm;
+    const searchTermElement = document.getElementById("search-term");
+    if (searchTermElement) {
+      searchTermElement.innerHTML = searchTerm;
+    }
 
     console.log("filtering advocates...");
     const filteredAdvocates = advocates.filter((advocate) => {
       return (
-        advocate.firstName.includes(searchTerm) ||
-        advocate.lastName.includes(searchTerm) ||
-        advocate.city.includes(searchTerm) ||
-        advocate.degree.includes(searchTerm) ||
-        advocate.specialties.includes(searchTerm) ||
-        advocate.yearsOfExperience.includes(searchTerm)
+        advocate.firstName.toLowerCase().includes(searchTerm) ||
+        advocate.lastName.toLowerCase().includes(searchTerm) ||
+        advocate.city.toLowerCase().includes(searchTerm) ||
+        advocate.degree.toLowerCase().includes(searchTerm) ||
+        advocate.specialties.some((s) =>
+          s.toLowerCase().includes(searchTerm)
+        ) ||
+        advocate.yearsOfExperience.toString().includes(searchTerm)
       );
     });
 
