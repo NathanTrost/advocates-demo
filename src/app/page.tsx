@@ -1,6 +1,5 @@
 "use client";
 
-import { index } from "drizzle-orm/pg-core";
 import { useEffect, useState } from "react";
 
 export default function Home() {
