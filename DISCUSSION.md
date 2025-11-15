@@ -61,8 +61,13 @@
 - Consolidated first and last names in table to "Name" to minimize space.
 - Moved 'Search' title to the input placeholder instead (cleaner UI, less redundancy)
 - Added `classnames` package and using it within page.tsx and the new ExpandableTable component. I find this package useful especially for dynamic classnames, but like to use it anytime multiple classnames need to be used, this opinion comes from fighting snapshot tests but also disliking the ole 'undefined' class in html markup.
+- Added some simple styling for accessibility purposes
 - Utilizing custom `formatPhoneNumber` util in table
 
 **Bug Fix:**
 
 - Added `prettier` & `prettier-plugin-tailwindcss` packages. I had missed installing prettier in the initial PR. As this was a much larger PR it made the lack of auto-formatting more obvious.
+
+### [Update this Discussion](https://github.com/NathanTrost/advocates-demo/pull/12/files)
+
+- This branch contains all cumulative changes from the earlier chained branches
