@@ -7,6 +7,7 @@
 - I'd cleanup consoles and document methods used for 'searchTerm'
 - I'd add an error and a loading state for the table data to present a smoother UX
 - I'd analyze and address any accessibility shortcomings that might exist here
+- I might have utilized Solace brand colors as well as the pre-included tailwind gradients supplied in this repo
 
 ## Given more hours+
 
