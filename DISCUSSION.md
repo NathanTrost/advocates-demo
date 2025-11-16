@@ -1,13 +1,42 @@
 # DISCUSSION
 
+## WHAT WOULD I DO IF I HAD MORE TIME?
+
+### Given a little more time
+
+- I'd cleanup consoles and document methods used for 'searchTerm'
+- I'd add an error and a loading state for the table data to present a smoother UX
+- I'd analyze and address any accessibility shortcomings that might exist here
+- I might have utilized Solace brand colors as well as the pre-included tailwind gradients supplied in this repo
+
+### Given more hours+
+
+- I'd look into major version package updates to both address existing moderate vulnerabilities, but also just to start the app off 'up-to-date'. If major breaks existed and they couldn't be quickly addressed, I'd update what I could to reduce vulnerabilities until those breaks could be updated.
+- I'd migrate to Server Components with native Next.js fetch caching
+- I'd incorporate Suspense and ErrorBoundaries for load and error states
+- I'd align and update the URL with current search params as they are processed (many considerations on this, multiple terms, debouncing, etc)
+- I'd add testing. Jest for utilities. I'm partial to cypress for e2e
+- I'd work on setting up the database, but opted not to since I've not worked with drizzle yet
+
+## STRATEGIC DECISIONS
+
+**Focus:** Prioritized frontend transformation where I add most value, with strategic backend touches.
+
+**Approach:**
+1. **Foundation** - Fixed critical bugs (hydration, types, error handling, security vulnerability)
+2. **Backend Scope** - Type improvements and API error handling represent my backend contribution; used mock data to avoid Docker/Postgres/Drizzle setup
+3. **UI/UX Investment** - Majority of time spent transforming unstyled prototype into production-ready application with minimal design system, ExpandableTable component, and interaction polish
+
+This prioritization reflects my 80-90% frontend specialization. The UI transformation moves it significantly closer to production-ready, though additional features like loading states, error boundaries, and enhanced accessibility would complete the polish.
+
+
 ## WORK DONE HERE
 
-### Initial Dev Setup[https://github.com/NathanTrost/advocates-demo/pull/7/files]
+### [Initial Dev Setup](https://github.com/NathanTrost/advocates-demo/pull/7/files)
 
 **Enhancement:**
 
 - Added basic VSCode setup and prettierconfig to ain autoformatting and other tooling
-
 - Ignoring claude files
 
 ### Hydration and Key Fixes[https://github.com/NathanTrost/advocates-demo/pull/8/files]
@@ -45,8 +74,13 @@
 - Consolidated first and last names in table to "Name" to minimize space.
 - Moved 'Search' title to the input placeholder instead (cleaner UI, less redundancy)
 - Added `classnames` package and using it within page.tsx and the new ExpandableTable component. I find this package useful especially for dynamic classnames, but like to use it anytime multiple classnames need to be used, this opinion comes from fighting snapshot tests but also disliking the ole 'undefined' class in html markup.
+- Added some simple styling for accessibility purposes
 - Utilizing custom `formatPhoneNumber` util in table
 
 **Bug Fix:**
 
 - Added `prettier` & `prettier-plugin-tailwindcss` packages. I had missed installing prettier in the initial PR. As this was a much larger PR it made the lack of auto-formatting more obvious.
+
+### [Update this Discussion](https://github.com/NathanTrost/advocates-demo/pull/12/files)
+
+- This branch contains all cumulative changes from the earlier chained branches
