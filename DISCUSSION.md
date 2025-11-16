@@ -18,6 +18,18 @@
 - I'd add testing. Jest for utilities. I'm partial to cypress for e2e
 - I'd work on setting up the database, but opted not to since I've not worked with drizzle yet
 
+## STRATEGIC DECISIONS
+
+**Focus:** Prioritized frontend transformation where I add most value, with strategic backend touches.
+
+**Approach:**
+1. **Foundation** - Fixed critical bugs (hydration, types, error handling, security vulnerability)
+2. **Backend Scope** - Type improvements and API error handling represent my backend contribution; used mock data to avoid Docker/Postgres/Drizzle setup
+3. **UI/UX Investment** - Majority of time spent transforming unstyled prototype into production-ready application with minimal design system, ExpandableTable component, and interaction polish
+
+This prioritization reflects my 80-90% frontend specialization. The UI transformation moves it significantly closer to production-ready, though additional features like loading states, error boundaries, and enhanced accessibility would complete the polish.
+
+
 ## WORK DONE HERE
 
 ### [Initial Dev Setup](https://github.com/NathanTrost/advocates-demo/pull/7/files)
