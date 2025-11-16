@@ -9,7 +9,7 @@
 - I'd analyze and address any accessibility shortcomings that might exist here
 - I might have utilized Solace brand colors as well as the pre-included tailwind gradients supplied in this repo
 
-## Given more hours+
+### Given more hours+
 
 - I'd look into major version package updates to both address existing moderate vulnerabilities, but also just to start the app off 'up-to-date'. If major breaks existed and they couldn't be quickly addressed, I'd update what I could to reduce vulnerabilities until those breaks could be updated.
 - I'd migrate to Server Components with native Next.js fetch caching
